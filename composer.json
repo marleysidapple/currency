@@ -1,0 +1,24 @@
+{
+    "name": "marleysidapple/currency",
+    "version": "1.0.0",
+    "description": "currency api for laravel",
+    "keywords": ["currency", "currency-exchange-api", "exchange-rate", "currency-exchange"],
+    "homepage": "https://github.com/marleysidapple/currency",
+    "license": "MIT",
+    "authors": [{
+        "name": "Siddhartha",
+        "email": "bsiddhartha25@gmail.com"
+    }],
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "~4.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Marleysid\\Currency": "src/"
+        }
+    }
+}
