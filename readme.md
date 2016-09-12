@@ -25,13 +25,13 @@ Then run `composer update`
 
 ### Configuration
 
-After installation, go to `config/app.php`. Add 
+After installation, go to `config/app.php`. Add in provider array
 
 ```
  Marleysid\Currency\CurrencyServiceProvider::class,
 
 ```
-in provider array. Add `alias` as well in alias array
+ Add `alias` as well in alias array
 
 ```
  'Currency'=> Marleysid\Currency\Facade\CurrencyFacade::class,
@@ -46,19 +46,19 @@ php artisan vendor:publish
 
 ```
 
-Once publish is completed open `config/currency.php`. It contains two element. One is `url` which is an api endpoint and another one is `baseCurrency`. You can change `baseCurrency` and set standard currency of your own however `url` value is not meant to be changed.
+Once publish is completed,  open `config/currency.php`. It contains two element. One is `url` which is an api endpoint and another one is `baseCurrency`. You can change `baseCurrency` and set standard currency of your own, however `url` value is not meant to be changed.
 
 
 ##Example
 
-add `use Currency` in the top of the controller you wish to use. 
+add `use Currency;` in the top of the controller. 
 
 
 ```
 $exchangeRate = Currency::exchangeRate('baseCurrency', 'date', 'conversionCurrency');
 
 ``` 
-For example: if `baseCurrency` is set to `GBP`, all the conversion rates will be show in respect to `GBP` as a base. Passing `date` will give the exchange rate for that particular date. And passing `conversionCurrency` will give the exchange Rate for that particular `conversionCurrency` in respect to the specified `baseCurrency`.
+ if `baseCurrency` is set to `GBP`, all the conversion rates will be show in respect to `GBP` as a base. Passing `date` will give the exchange rate for that particular date. And passing `conversionCurrency` will give the exchange Rate for that particular `conversionCurrency` in respect to the specified `baseCurrency`.
 
 
 
@@ -76,7 +76,7 @@ $exRate = Currency::exchangeRate('USD', '2015-10-23');
 
 ```
 
-returns `ex rate` for the specified date
+returns `exrates` for the specified date
 
 
 ```
@@ -84,7 +84,7 @@ $exRate = Currency::exchangeRate('USD', '2015-10-23', 'AUD');
 
 ```
 
-returns `ex rate` of `1 USD` to `1 AUD` on specified `date`
+returns `exrate` of `1 USD` to `1 AUD` on specified `date`
 
 
 
